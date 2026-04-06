@@ -1,32 +1,37 @@
 # Padrões e Contextos Globais (Desenvolvimento IA)
 
-Este repositório consolida os **4 contextos corporativos principais** que ditam as regras, padrões operacionais e arquiteturais a serem seguidos tanto pelo time de desenvolvedores humanos quanto por Agentes e IAs atuando no projeto.
+Este repositório consolida a fundação de **Context Engineering** do projeto. Ele estabelece as regras de negócio, as diretrizes arquiteturais e o comportamento operacional esperado para o desenvolvimento assistido por inteligência artificial e para a colaboração do time.
 
-## Estrutura do Repositório
+A adoção estrita desta base de conhecimento garante que agentes e plataformas copilot atuem como engenheiros de software seniores, gerando código robusto, escalável e perfeitamente alinhado com a governança da empresa, mitigando ao máximo "alucinações" e implementações fora do padrão.
 
-Todos os padrões estão localizados na pasta `Docs/CONTEXT`:
+## 🗂️ Estrutura do Conhecimento Otimizado (Context Assets)
 
-- 🏛️ **`CONTEXT_ARCH_00.md`**: Padrão técnico e estrutural do projeto (Infraestrutura, separação de camadas, Docker Compose, FastAPI, regras de banco).
-- 🤖 **`CONTEXT_AGENTS_00.md`**: Padrão global de comportamento da IA e Agentes (Instruções sobre como analisar requisitos, criar planos, "Plano Vivo" e evitar soluções literais).
-- 🧭 **`CONTEXT_UX_00.md`**: Padrão de navegação, taxonomia e experiência de interface.
-- 🔀 **`CONTEXT_GIT_00.md`**: Padrão corporativo de desenvolvimento e versionamento (Fluxo de PRs, nomenclatura de branches e revisão).
+As diretrizes estão modularizadas dentro do diretório `Docs/CONTEXT/`. Essa quebra aumenta a precisão durante a injeção em prompts, dividindo as regras nas seguintes camadas lógicas:
 
-## Como Utilizar
-
-A IA ou o Agente em execução no projeto deve ser alimentado com esses contextos antes de realizar qualquer tarefa. 
-
-1. **Contexto de Sistema**: Esses arquivos funcionam em conjunto com arquivos de regras de negócios locais e assumem a prioridade para tomadas de decisões arquiteturais globais. 
-2. **Desenvolvedores**: Usem esse repositório como guia de estilo. Sempre que uma exceção precisar ser adotada ou um novo padrão emergir, este repositório deve ser votado, atualizado e versionado de acordo.
-3. **Plano Vivo**: Ao iniciar frentes de trabalho relevantes, a IA construirá as soluções guiando-se estritamente por estas definições, criando e mantendo um único "Plano Vivo" na raiz do foco de desenvolvimento, sem causar fraturas documentais.
+- 🏛️ **`CONTEXT_ARCH_00.md`**: Define a Infraestrutura da aplicação (Docker, Nginx), as fronteiras das Camadas Lógicas (FastAPI com ORM), as regras de banco de dados e a imutabilidade estrita das migrations.
+- 🤖 **`CONTEXT_AGENTS_00.md`**: Estabelece o "System Prompt" comportamental da IA: regras de ponderação de decisões, obrigação do anti-literalismo, exigência de análise prévia e a utilização compulsória do método "Plano Vivo".
+- 🧭 **`CONTEXT_UX_00.md`**: Define a Experiência Operacional: taxonomia correta de menus, regras de empty/loading states, tratamento responsivo e padrões inegociáveis para renderização de telas e retorno de informações visuais.
+- 🔀 **`CONTEXT_GIT_00.md`**: Define a Estrutura de Versionamento: nomeação semântica de branches, padrão focado em features e a governança rígida para aprovação, revisão e execução de Pull Requests.
 
 ---
 
-## 🛠 Instruções para a Equipe de Desenvolvimento (Antes de realizar Serviços de IA)
+## 🛠️ Onboarding Diário: Integrando a IA ao Workflow
 
-Para garantir que o código gerado ou as propostas arquiteturais obedeçam às diretrizes da empresa, **nenhuma tarefa deve ser iniciada pela IA sem ela consumir este contexto rigorosamente**. 
+Para maximizar a precisão da IA e restringir as gerações à realidade da empresa, **nenhuma solicitação de escopo ou de código deve começar sem o pareamento prévio (few-shot context)** baseado nestes contextos.
 
-Antes de interagir para solicitar desenvolvimentos:
+### Passo a Passo para Desenvolvedores e Revisores
 
-1. **Ancore o Contexto:** Ao criar o escopo em sua ferramenta (Cursor, Copilot, etc.), **anexe ou faça referência explícita (use comandos de mention como @Files)** aos 4 arquivos localizados na pasta `Docs/CONTEXT/`.
-2. **Forçar a Leitura Inicial:** Comece instruindo a IA com uma frase âncora antes da real solicitação, como *"Leia e absorva todos os arquivos de contexto anexados e atue sob as diretrizes e regras presentes neles."*
-3. **Validação Humana (Anti-Lireraralismo):** Lembre-se do que diz o `CONTEXT_AGENTS_00.md`. A equipe de desenvolvimento deve vetar qualquer solução da IA que proponha "Mock Data", pule Integrações ou sugira fragmentações injustificadas de front-end. O time é o árbitro se as regras recém-inseridas estão sendo cumpridas.
+1. **Sincronize a Realidade Local**: Garanta que você está usando a última versão de diretrizes presente na branch `main` (`git pull`).
+2. **Ancoragem de Contexto (Context Injection)**: 
+   - Ao iniciar qualquer nova iteração ou thread em seu assistente de IA (Cursor, GitHub Copilot, Editores Inteligentes, etc.), **forneça uma referência explícita** aos 4 arquivos do diretório `Docs/CONTEXT/` utilizando as ferramentas nativas de anexos (ex: @Files, Context Symbols).
+3. **Ponto de Inicialização Técnica (System Prompting)**: 
+   - Antes de colar a descrição da tarefa (o backlog), adicione ao chat a seguinte instrução técnica que forçará a adoção estrutural da IA:
+   > *"Leia rigorosamente os documentos de arquitetura, agenciamento, ux e versionamento anexados para carregar a configuração atual do projeto. Quaisquer propostas, elaborações de planos ou linhas de código emitidas a partir deste momento deverão obrigatoriamente honrar as regras de negócio expressas neles."*
+4. **Validação de Conformidade (Governança Humana)**:
+   - Torne o agente de IA responsável. Acuse desvios sempre que o LLM propor gerar falsos dados isolados sem autorização explícita ("Mocks"), promover dependências de frameworks não citados ou quando ignorar o ciclo do anti-literalismo priorizando atalhos arquiteturais proscritos no documento `CONTEXT_AGENTS_00.md`.
+
+## 🔄 Evolução dos Padrões e Continuous Learning
+
+Os padrões documentados neste repositório refletem as configurações vivas de projeto e baseiam o amadurecimento constante dele:
+- **Plano Vivo (Design Docs Iterativos)**: Na ideação de novas frentes de trabalho ou refatorações críticas, encoraje a IA a projetar previamente e submeter um plano. Autorize essa estruturação antes do início das escritas. Reúna os avanços unicamente naquele arquivo local da feature.
+- **Retroalimentação de Regras Globais**: Se ao longo do desenvolvimento for consolidado um novo paradigma tecnológico ou surgir uma alteração de padronização, elas devem ser discutidas com a equipe e codificadas como um Pull Request para a própria documentação dos Contextos. Ao atualizar estes arquivos fonte, garantimos o alinhamento arquitetural para sessões de Inteligência Artificial subsequentes em todas as pontas da empresa.
