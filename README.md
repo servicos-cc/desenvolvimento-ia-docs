@@ -6,10 +6,10 @@ Este repositório consolida os **4 contextos corporativos principais** que ditam
 
 Todos os padrões estão localizados na pasta `Docs/CONTEXT`:
 
-- 🏛️ **`CONTEXT_ARCH.md`**: Padrão técnico e estrutural do projeto (Infraestrutura, separação de camadas, Docker Compose, FastAPI, regras de banco).
-- 🤖 **`CONTEXT_AGENTS.md`**: Padrão global de comportamento da IA e Agentes (Instruções sobre como analisar requisitos, criar planos, "Plano Vivo" e evitar soluções literais).
-- 🧭 **`CONTEXT_UX.md`**: Padrão de navegação, taxonomia e experiência de interface.
-- 🔀 **`CONTEXT_GIT.md`**: Padrão corporativo de desenvolvimento e versionamento (Fluxo de PRs, nomenclatura de branches e revisão).
+- 🏛️ **`CONTEXT_ARCH_00.md`**: Padrão técnico e estrutural do projeto (Infraestrutura, separação de camadas, Docker Compose, FastAPI, regras de banco).
+- 🤖 **`CONTEXT_AGENTS_00.md`**: Padrão global de comportamento da IA e Agentes (Instruções sobre como analisar requisitos, criar planos, "Plano Vivo" e evitar soluções literais).
+- 🧭 **`CONTEXT_UX_00.md`**: Padrão de navegação, taxonomia e experiência de interface.
+- 🔀 **`CONTEXT_GIT_00.md`**: Padrão corporativo de desenvolvimento e versionamento (Fluxo de PRs, nomenclatura de branches e revisão).
 
 ## Como Utilizar
 
