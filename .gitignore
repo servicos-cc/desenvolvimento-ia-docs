@@ -1,0 +1,11 @@
+# Ignorar absolutamente TUDO no repositório por padrão
+*
+
+# Liberar (Não ignorar) os diretórios necessários para encontrar os arquivos permitidos
+!docs/
+!docs/CONTEXT/
+
+# Liberar (Não ignorar) os arquivos específicos e oficiais do projeto
+!docs/CONTEXT/*
+!README.md
+!.gitignore
