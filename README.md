@@ -18,3 +18,15 @@ A IA ou o Agente em execução no projeto deve ser alimentado com esses contexto
 1. **Contexto de Sistema**: Esses arquivos funcionam em conjunto com arquivos de regras de negócios locais e assumem a prioridade para tomadas de decisões arquiteturais globais. 
 2. **Desenvolvedores**: Usem esse repositório como guia de estilo. Sempre que uma exceção precisar ser adotada ou um novo padrão emergir, este repositório deve ser votado, atualizado e versionado de acordo.
 3. **Plano Vivo**: Ao iniciar frentes de trabalho relevantes, a IA construirá as soluções guiando-se estritamente por estas definições, criando e mantendo um único "Plano Vivo" na raiz do foco de desenvolvimento, sem causar fraturas documentais.
+
+---
+
+## 🛠 Instruções para a Equipe de Desenvolvimento (Antes de realizar Serviços de IA)
+
+Para garantir que o código gerado ou as propostas arquiteturais obedeçam às diretrizes da empresa, **nenhuma tarefa deve ser iniciada pela IA sem ela consumir este contexto rigorosamente**. 
+
+Antes de interagir para solicitar desenvolvimentos:
+
+1. **Ancore o Contexto:** Ao criar o escopo em sua ferramenta (Cursor, Copilot, etc.), **anexe ou faça referência explícita (use comandos de mention como @Files)** aos 4 arquivos localizados na pasta `Docs/CONTEXT/`.
+2. **Forçar a Leitura Inicial:** Comece instruindo a IA com uma frase âncora antes da real solicitação, como *"Leia e absorva todos os arquivos de contexto anexados e atue sob as diretrizes e regras presentes neles."*
+3. **Validação Humana (Anti-Lireraralismo):** Lembre-se do que diz o `CONTEXT_AGENTS_00.md`. A equipe de desenvolvimento deve vetar qualquer solução da IA que proponha "Mock Data", pule Integrações ou sugira fragmentações injustificadas de front-end. O time é o árbitro se as regras recém-inseridas estão sendo cumpridas.
