@@ -6,7 +6,7 @@ A adoção estrita desta base de conhecimento garante que agentes e plataformas 
 
 ## Estrutura do Conhecimento Otimizado (Context Assets)
 
-As diretrizes estão modularizadas dentro do diretório `Docs/CONTEXT/`. Essa quebra aumenta a precisão durante a injeção em prompts, dividindo as regras nas seguintes camadas lógicas:
+As diretrizes estão modularizadas dentro do diretório `docs/CONTEXT/`. Essa quebra aumenta a precisão durante a injeção em prompts, dividindo as regras nas seguintes camadas lógicas:
 
 - **`CONTEXT_ARCH_00.md`**: Define a Infraestrutura da aplicação (Docker, Nginx), as fronteiras das Camadas Lógicas (FastAPI com ORM), as regras de banco de dados e a imutabilidade estrita das migrations.
 - **`CONTEXT_AGENTS_00.md`**: Estabelece o "System Prompt" comportamental da IA: regras de ponderação de decisões, obrigação do anti-literalismo, exigência de análise prévia e a utilização compulsória do método "Plano Vivo".
@@ -23,7 +23,7 @@ Para maximizar a precisão da IA e restringir as gerações à realidade da empr
 
 1. **Sincronize a Realidade Local**: Garanta que você está usando a última versão de diretrizes presente na branch `main` (`git pull`).
 2. **Ancoragem de Contexto (Context Injection)**: 
-   - Ao iniciar qualquer nova iteração ou thread em seu assistente de IA (Cursor, GitHub Copilot, Editores Inteligentes, etc.), **forneça uma referência explícita** aos 4 arquivos do diretório `Docs/CONTEXT/` utilizando as ferramentas nativas de anexos (ex: @Files, Context Symbols).
+   - Ao iniciar qualquer nova iteração ou thread em seu assistente de IA (Cursor, GitHub Copilot, Editores Inteligentes, etc.), **forneça uma referência explícita** aos 4 arquivos do diretório `docs/CONTEXT/` utilizando as ferramentas nativas de anexos (ex: @Files, Context Symbols).
 3. **Ponto de Inicialização Técnica (System Prompting)**: 
    - Antes de colar a descrição da tarefa (o backlog), adicione ao chat a seguinte instrução técnica que forçará a adoção estrutural da IA:
    > *"Leia rigorosamente os documentos de arquitetura, agenciamento, ux e versionamento anexados para carregar a configuração atual do projeto. Quaisquer propostas, elaborações de planos ou linhas de código emitidas a partir deste momento deverão obrigatoriamente honrar as regras de negócio expressas neles."*
